@@ -1,0 +1,229 @@
+@import '../../../../assets/styles/flex.scss';
+
+.top {
+  padding: 30px 30px 0 30px;
+
+  &-title {
+      padding: 15px 20px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 25px;
+      box-shadow: 1px 1px 1px 1px #838383;
+      border-radius: 3px;
+      background-color: #F8F9FA;
+  }
+
+  &-nav {
+      padding: 20px 0;
+      @include flex(between, center);
+      position: relative;
+      height: 50px;
+
+      &__box {
+          @include flex('', center);
+
+          span {
+              font-size: 18px;
+          }
+
+          &-button {
+              color: #F8F9FA;
+              background-color: #0096C7;
+              width: 100px;
+              height: 35px;
+              font-size: 18px;
+              border: 0px;
+              border-radius: 3px;
+              outline: none;
+              cursor: pointer;
+
+              &:hover {
+                  background-color: #90E0EF;
+              }
+
+                &:active {
+                  background-color: #48BBDB;
+              }
+          }
+
+          &-page {
+              @include flex(center, center);
+
+              div {
+                  @include flex(center, center);
+              }
+
+              &-arrow {
+                  width: 20px;
+                  height: 20px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 18px;
+                  margin-right: 5px;
+                  color: #73ccff;
+                  background-color: #fff;
+                  box-shadow: 1px 1px 1px 1px #838383;
+                  cursor: pointer;
+                  border-radius: 50px;
+                  &:hover {
+                      opacity: .5;
+                  }
+
+                  &:active {
+                      opacity: .5;
+                  }
+              }
+
+              &-number {
+                  width: 17px;
+                  height: 17px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 18px;
+                  margin-right: 5px;
+                  color: #73ccff;
+                  background-color: #fff;
+                  box-shadow: 1px 1px 1px 1px #838383;
+                  cursor: pointer;
+                  border-radius: 50px;
+
+                  &:hover {
+                      opacity: .5;
+                  }
+
+                  &:active {
+                      opacity: .5;
+                  }
+              }
+          }
+      }
+  }
+}
+
+.middle {
+  padding: 0 30px;
+  height: calc(100% - 195px);
+  display: block;
+
+  &-list {
+      width: 100%;
+      height: calc(100% - 46px);
+
+      &__title {
+          background-color: #F8F9FA;
+          padding: 15px 20px;
+          border-radius: 5px;
+          box-shadow: 1px 1px 1px 1px #838383;
+          @include flex(between, center);
+          position: relative;
+          z-index: 10;
+
+          div {
+              text-align: center;
+
+              p {
+                  color:#232323;
+                  margin: 0;
+              }
+
+              &:nth-child(1) {
+                  width: 5%;
+              }
+
+              &:nth-child(2) {
+                  width: 85%;
+              }
+
+              &:nth-child(3) {
+                  width: 5%;
+              }
+
+              &:nth-child(4) {
+                  width: 5%;
+              }
+          }
+      }
+
+      &__content {
+          height: calc(100% - 46px);
+          overflow: hidden;
+          width: 100%;
+          position: relative;
+
+          &-box {
+              background-color: #F8F9FA;
+          }
+
+          .scrollbar-macosx {
+              height: 100%;
+          }
+
+          &-none-data {
+              width: 100%;
+              height: 100%;
+              background-color: #f3f3f3;
+              color: #000;
+              font-size: 30px;
+              display: none;
+
+              &_show {
+                  @include flex(center,center);
+              }
+          }
+
+          &-item {
+              padding: 15px 20px;
+              @include flex(between, center);
+              border-bottom: 1px solid #c5c5c5;
+
+              &:last-child {
+                  border: 0px;
+              }
+
+              div {
+                  text-align: center;
+
+                  img {
+                      width: 30px;
+                      height: 30px;
+                      color: #73ccff;
+                      cursor: pointer;
+
+                      &:hover {
+                      opacity: .5;
+                      }
+
+                      &:active {
+                      opacity: .7;
+                      }
+                  }
+
+                  p {
+                      color:#000;
+                      white-space: nowrap;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      margin: 0;
+                      font-size: 16px;
+                  }
+
+                  &:nth-child(1) {
+                      width: 5%;
+                  }
+
+                  &:nth-child(2) {
+                      width: 85%;
+                  }
+
+                  &:nth-child(3) {
+                      width: 5%;
+                  }
+
+                  &:nth-child(4) {
+                      width: 5%;
+                  }
+              }
+          }
+      }
+  }
+}

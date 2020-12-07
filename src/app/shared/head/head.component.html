@@ -1,0 +1,56 @@
+<header class="header">
+  <div class="header__name">
+    <i class="header__name-icon" (click)="setListShow()">
+      <img src="../../../assets/icons/menu.png" alt="" />
+    </i>
+    <span class="header__name-span">管理平台</span>
+  </div>
+  <ul class="header-right">
+    <li class="header-right__item" (click)="routeTag('/home')">
+      <img src="../../../assets/icons/home.png" />
+    </li>
+    <li class="header-right__item">
+      <img src="../../../assets/icons/message.png" />
+    </li>
+    <li class="header-right__user">
+      <img src="../../../assets/icons/administrator.png" />
+      <p>Admin</p>
+    </li>
+    <li class="header-right__item">
+      <img src="../../../assets/icons/sign_out.png" />
+    </li>
+  </ul>
+</header>
+<div class="body">
+  <!-- 左側清單 -->
+  <!-- body-left_width -->
+  <div class="body-left" [ngClass]="{ 'body-left_show': listBtn }">
+    <ul class="left-list">
+      <li class="left-list__item" [ngClass]="{'left-list__item_focus': this.tagName === '/customer' }" (click)="routeTag('/customer')">
+        <img src="../../../assets/icons/customer.png" alt="" />
+        <p>客戶管理</p>
+      </li>
+      <li class="left-list__item" [ngClass]="{'left-list__item_focus': this.tagName === '/shop' }" (click)="routeTag('/shop')">
+        <img src="../../../assets/icons/shop.png" alt="" />
+        <p>商店管理</p>
+      </li>
+      <li class="left-list__item" [ngClass]="{'left-list__item_focus': this.tagName === '/product' }" (click)="routeTag('/product')">
+        <img src="../../../assets/icons/cola_drink.png" alt="" />
+        <p>商品管理</p>
+      </li>
+      <li class="left-list__item" [ngClass]="{'left-list__item_focus': this.tagName === '/productType' }" (click)="routeTag('/productType')">
+        <img src="../../../assets/icons/morphing.png" alt="" />
+        <p>商品類別管理</p>
+      </li>
+      <li class="left-list__item" [ngClass]="{'left-list__item_focus': this.tagName === '/report' }" (click)="routeTag('/report')">
+        <img src="../../../assets/icons/report.png" alt="" />
+        <p>銷售報表</p>
+      </li>
+    </ul>
+  </div>
+  <!-- 右側內容 -->
+  <!-- body-right_width -->
+  <div class="body-right">
+    <ng-content #name></ng-content>
+  </div>
+</div>

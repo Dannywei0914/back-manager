@@ -1,0 +1,35 @@
+@import '../../../../assets/styles/flex.scss';
+
+.view {
+  width: 100%;
+  height: 100%;
+  @include flex(center, '');
+  flex-flow: column;
+  background-color: #E9ECEF;
+
+  &__scrollbar {
+    height: 100%;
+  }
+
+  &__home {
+    padding: 20px 100px;
+    width: calc(100% - 200px);
+  }
+}
+
+.cp-box {
+  width: 100%;
+  @include flex(between, center);
+}
+
+.chart {
+  background-color: #F8F9FA;
+  border-radius: 3px;
+  padding: 10px;
+  box-shadow: 1px 1px 3px 1px #838383;
+  margin-bottom: 20px;
+
+  &_width {
+    width: 46%;
+  }
+}

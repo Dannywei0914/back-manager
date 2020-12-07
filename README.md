@@ -1,3 +1,7 @@
+# Angular框架雲端後台介面練習(製作中)
+
+使用Angular框架製作後台管理系統ing...
+
 # BackManager
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.

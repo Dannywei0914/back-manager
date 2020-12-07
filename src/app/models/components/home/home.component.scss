@@ -1,0 +1,84 @@
+@import '../../../../assets/styles/flex.scss';
+
+.view {
+  // width: calc(100% - 400px);
+  @include flex(center, '');
+  flex-wrap: wrap;
+  // padding: 10px 200px;
+  // background-color: #E9ECEF;
+
+  &__title {
+    width: 100%;
+    padding: 20px 0;
+
+    span {
+      font-size: 40px;
+      font-weight: bold;
+    }
+  }
+
+  &__grid {
+    width: 100%;
+    @include flex(between,'');
+    padding-bottom: 20px;
+
+    &-right {
+      width: 40%;
+    }
+
+    &-box {
+      width: 24%;
+      height: 100px;
+      @include flex('',center);
+      border-radius: 3px;
+
+      &_pink {
+        background-color: rgb(240, 114, 223);
+      }
+
+      &_purple {
+        background-color: rgb(181, 117, 255);
+      }
+
+      &_blue {
+        background-color: rgb(91, 211, 195);
+      }
+
+      &_green {
+        background-color: rgb(127, 209, 95);
+      }
+
+      &-item {
+        padding: 0 20px;
+        width: calc(100% - 120px);
+
+        p {
+          color: #fff;
+          margin: 0;
+        }
+
+        &-value {
+          font-size: 30px;
+        }
+
+        &-title {
+          font-size: 12px;
+        }
+      }
+
+      &-icon {
+        width: 80px;
+        height: 100%;
+        @include flex(center,center);
+        background-color: rgba(0,0,0,.1);
+
+        img {
+          width: 40px;
+          height: 40px;
+          font-size: 40px;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
