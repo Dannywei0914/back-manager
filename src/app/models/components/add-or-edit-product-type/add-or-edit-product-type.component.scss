@@ -5,14 +5,14 @@
   height: 100%;
   position: absolute;
   top: 0;
-  background-color: rgba($color: #868686, $alpha: .7);
+  background-color: rgba($color: #000, $alpha: .7);
   z-index: 60;
   @include flex(center, center);
 }
 
 .popup {
-  width: 600px;
-  height: 400px;
+  width: 450px;
+  height: 300px;
   background-color: #fff;
   border-radius: 3px;
 
@@ -20,12 +20,60 @@
     text-align: center;
     padding: 30px;
     display: block;
-    font-size: 30px;
+    font-size: 25px;
   }
 
   &__content {
     @include flex(center, center);
-    height: 100px;
+    height: 130px;
     padding: 0 30px;
+
+    p {
+      margin: 0;
+    }
+
+    &-name {
+      font-size: 20px;
+    }
+
+    &-input {
+      width: 200px;
+      border: 0;
+      border-bottom: 1px solid #000;
+      outline-style: none;
+      font-size: 20px;
+      margin: 0 10px;
+    }
+  }
+
+  &__box {
+    @include flex(center, center);
+    padding: 30px;
+
+    &-button {
+      width: 80px;
+      height: 30px;
+      border-radius: 3px;
+      background-color: #fff;
+      border: 1px solid #0096C7;
+      margin-right: 10px;
+      cursor: pointer;
+      outline-style: none;
+      color: #0096C7;
+      font-size: 16px;
+
+      &:hover {
+        background-color: #90E0EF;
+      }
+
+      &:active {
+        background-color: #48BBDB;
+      }
+
+      &_blue {
+        background-color: #0096C7;
+        color: #fff;
+      }
+    }
   }
 }

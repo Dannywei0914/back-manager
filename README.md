@@ -2,6 +2,9 @@
 
 使用Angular框架製作後台管理系統ing...
 
+# 修改日記
+12/10 新增類別新增修改彈窗
+
 # BackManager
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.

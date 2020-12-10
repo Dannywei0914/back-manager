@@ -2,8 +2,12 @@
   <div class="popup">
     <span class="popup__title">新增類別</span>
     <div class="popup__content">
-      <p class="popup__content-name"></p>
-      <input type="text" class="popup__content-input">
+      <p class="popup__content-name">類別名稱：</p>
+      <input type="text" class="popup__content-input" [value]="typeValue.name" (keyup)="setTypeName($event)">
+    </div>
+    <div class="popup__box">
+      <button class="popup__box-button" (click)="closePopup(true)">取消</button>
+      <button class="popup__box-button popup__box-button_blue" (click)="emitButton(true, typeValue)">確定</button>
     </div>
   </div>
 </div>

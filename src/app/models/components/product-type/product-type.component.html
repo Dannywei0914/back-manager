@@ -2,7 +2,7 @@
   <div class="top-title">商品類別管理</div>
   <div class="top-nav">
       <div class="top-nav__box">
-          <button type="button" class="top-nav__box-button">+ Add</button>
+          <button type="button" class="top-nav__box-button" (click)="emitButton(true)">+ Add</button>
       </div>
       <div class="top-nav__box">
           <ul class="top-nav__box-page">
@@ -40,7 +40,7 @@
                       <img src="../../../../assets/icons/mail_trash_can.png" alt="">
                   </div>
                   <div>
-                      <img src=".../../../../assets/icons/edit.png" alt="">
+                      <img src=".../../../../assets/icons/edit.png" alt=""  (click)="emitEditValue(true, item)">
                   </div>
               </li>
           </div>

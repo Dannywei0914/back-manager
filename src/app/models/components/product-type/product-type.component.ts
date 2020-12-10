@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ApiService } from 'src/app/core/api.service';
 import { map } from 'rxjs/operators';
 
@@ -9,6 +9,8 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./product-type.component.scss']
 })
 export class ProductTypeComponent implements OnInit {
+  @Output() popupButton = new EventEmitter<boolean>();
+  @Output() editValue = new EventEmitter<object>();
   pipeData$: Observable<any>;
 
   constructor(
@@ -26,5 +28,14 @@ export class ProductTypeComponent implements OnInit {
     this.api.get('http://localhost:3000/data').subscribe(res => {
       console.log(res);
     });
+  }
+
+  emitButton(agreed: boolean) {
+    this.popupButton.emit(agreed);
+  }
+
+  emitEditValue(agreed: boolean, item: object) {
+    this.popupButton.emit(agreed);
+    this.editValue.emit(item);
   }
 }
