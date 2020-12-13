@@ -5,6 +5,7 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
 import { ChartsModule } from 'ng2-charts';
 import { MaterialModule } from './material/material.module';
+import { MessagePopupComponent } from './message-popup/message-popup.component';
 
 
 
@@ -12,7 +13,8 @@ import { MaterialModule } from './material/material.module';
   declarations: [
     HeadComponent,
     BarChartComponent,
-    DoughnutChartComponent
+    DoughnutChartComponent,
+    MessagePopupComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { MaterialModule } from './material/material.module';
     HeadComponent,
     BarChartComponent,
     DoughnutChartComponent,
-    MaterialModule
+    MaterialModule,
+    MessagePopupComponent
   ]
 })
 export class SharedModule { }

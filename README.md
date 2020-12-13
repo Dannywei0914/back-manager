@@ -5,6 +5,10 @@
 # 修改日記
 12/10 新增類別新增修改彈窗
 
+12/11 修改類別彈窗呼叫及資料傳遞方式，目前output,input寫起來有點複雜ing
+
+12/13 完成類別的CRUD & loading頁面 ＆ 無資料顯示頁面
+
 # BackManager
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.

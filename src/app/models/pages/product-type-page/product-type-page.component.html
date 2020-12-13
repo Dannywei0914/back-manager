@@ -1,6 +1,1 @@
-<div class="view">
-  <cdk-virtual-scroll-viewport class="view__scrollbar">
-    <app-product-type (popupButton)="onOpen($event)" (editValue)="onEditValue($event)"></app-product-type>
-  </cdk-virtual-scroll-viewport>
-</div>
-<app-add-or-edit-product-type *ngIf="isPopupOpen" (closeButton)="onClose($event)" [typeValue]="typeValue"></app-add-or-edit-product-type>
+<app-product-type [typeArray]="typeArray" (emitMsg)="onMsg($event)"></app-product-type>

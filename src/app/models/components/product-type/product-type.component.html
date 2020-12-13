@@ -1,56 +1,74 @@
-<div class="top">
-  <div class="top-title">商品類別管理</div>
-  <div class="top-nav">
-      <div class="top-nav__box">
-          <button type="button" class="top-nav__box-button" (click)="emitButton(true)">+ Add</button>
+<div class="view">
+  <perfect-scrollbar>
+    <div class="top">
+      <div class="top-title">商品類別管理</div>
+      <div class="top-nav">
+          <div class="top-nav__box">
+              <button type="button" class="top-nav__box-button" (click)="openAddPopup()">+ Add</button>
+          </div>
+          <div class="top-nav__box">
+              <ul class="top-nav__box-page">
+                  <div id="pageid"></div>
+              </ul>
+          </div>
       </div>
-      <div class="top-nav__box">
-          <ul class="top-nav__box-page">
-              <div id="pageid"></div>
-          </ul>
-      </div>
-  </div>
-</div>
-<div class="middle">
-  <ul class="middle-list">
-      <li class="middle-list__title">
-          <div>
-              <p>編號</p>
-          </div>
-          <div>
-              <p>商品名稱</p>
-          </div>
-          <div>
-              <p>刪除</p>
-          </div>
-          <div>
-              <p>編輯</p>
-          </div>
-      </li>
-      <ol class="middle-list__content">
-          <div id="Initdata$" class="middle-list__content-box">
-              <li class="middle-list__content-item" *ngFor="let item of this.pipeData$ | async">
-                  <div>
-                      <p>{{item.id}}</p>
-                  </div>
-                  <div>
-                      <p>{{item.name}}</p>
-                  </div>
-                  <div>
-                      <img src="../../../../assets/icons/mail_trash_can.png" alt="">
-                  </div>
-                  <div>
-                      <img src=".../../../../assets/icons/edit.png" alt=""  (click)="emitEditValue(true, item)">
-                  </div>
-              </li>
-          </div>
-          <!-- <div class="spinner-box">
-              <div class="spinner-box__circle">
-                  <span>Loading...</span>
+    </div>
+    <div class="middle">
+      <ul class="middle-list">
+          <li class="middle-list__title">
+              <div>
+                  <p>編號</p>
               </div>
-          </div> -->
-          <!-- 以下是沒有資料時顯示的,有先用display: none; -->
-          <div class="middle-list__content-none-data" id="noData">尚無資料</div>
-      </ol>
-  </ul>
+              <div>
+                  <p>商品名稱</p>
+              </div>
+              <div>
+                  <p>刪除</p>
+              </div>
+              <div>
+                  <p>編輯</p>
+              </div>
+          </li>
+          <ol class="middle-list__content">
+              <div class="middle-list__content-box">
+                  <li class="middle-list__content-item" *ngFor="let item of typeArray; index as i">
+                      <div>
+                          <p>{{i + 1}}</p>
+                      </div>
+                      <div>
+                          <p>{{item.name}}</p>
+                      </div>
+                      <div>
+                          <img src="../../../../assets/icons/mail_trash_can.png" alt="" (click)="openDeletePopup(item.id)">
+                      </div>
+                      <div>
+                          <img src=".../../../../assets/icons/edit.png" alt="" (click)="openEditPopup(item)">
+                      </div>
+                  </li>
+              </div>
+              <div class="spinner-box" *ngIf="this.componentsService.isTypeLoading === true">
+                  <div class="spinner-box__circle">
+                      <span>Loading...</span>
+                  </div>
+              </div>
+              <div class="middle-list__content-none-data" *ngIf="typeArray.length === 0 && this.componentsService.isTypeLoading === false">尚無資料</div>
+          </ol>
+      </ul>
+    </div>
+  </perfect-scrollbar>
 </div>
+
+<section class="section" *ngIf="popupOpen">
+  <div class="popup">
+    <span class="popup__title">{{popupTitle}}</span>
+    <div class="popup__content">
+      <p class="popup__content-name">類別名稱：</p>
+      <input type="text" class="popup__content-input" (keyup)="setTypeName($event)" [value]="typeObj.name">
+    </div>
+    <div class="popup__box">
+      <button class="popup__box-button" (click)="closePopup()">取消</button>
+      <button class="popup__box-button popup__box-button_blue" (click)="send(typeObj)">確定</button>
+    </div>
+  </div>
+</section>
+<app-message-popup *ngIf="isMsgPopup" (emitMsg)="onGetMsg($event)"></app-message-popup>

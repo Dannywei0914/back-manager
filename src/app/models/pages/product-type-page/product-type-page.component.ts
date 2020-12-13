@@ -1,39 +1,35 @@
-import { FixedSizeVirtualScrollStrategy, VIRTUAL_SCROLL_STRATEGY } from '@angular/cdk/scrolling';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
-export class CustomVirtualScrollStrategy extends FixedSizeVirtualScrollStrategy {
-  constructor() {
-    super(50, 250, 500);
-  }
-}
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/core/api.service';
+import { ComponentsService } from '../../components.service';
+
 @Component({
   selector: 'app-product-type-page',
   templateUrl: './product-type-page.component.html',
-  styleUrls: ['./product-type-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{provide: VIRTUAL_SCROLL_STRATEGY, useClass: CustomVirtualScrollStrategy}]
+  styleUrls: ['./product-type-page.component.scss']
 })
 export class ProductTypePageComponent implements OnInit {
-  isPopupOpen = false;
-  typeValue = {};
+  typeArray = [];
 
   constructor(
+    private api: ApiService,
+    private componentsService: ComponentsService
   ) { }
 
   ngOnInit(): void {
+    this.getInitData();
   }
 
-  onOpen(agreed: boolean) {
-    agreed ? this.isPopupOpen = true : this.isPopupOpen = false;
+  onMsg(type: boolean) {
+    if (type) {
+      this.getInitData();
+    }
   }
 
-  onEditValue(item: object) {
-    this.typeValue = JSON.parse(JSON.stringify(item));
+  getInitData() {
+    this.componentsService.isTypeLoading = true;
+    this.api.get('http://localhost:3000/productType').subscribe(res => {
+      this.typeArray = res;
+      this.componentsService.isTypeLoading = false;
+    })
   }
-
-  onClose(close: boolean) {
-    console.log(close);
-    close ? this.isPopupOpen = false : this.isPopupOpen = true;
-  }
-
 }

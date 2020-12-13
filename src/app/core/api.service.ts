@@ -28,4 +28,16 @@ export class ApiService {
       catchError(error => this.formatErrors(error)),
     );
   }
+
+  put(path: string, body): Observable<any> {
+    return this.http.put<any>(path, body).pipe(
+      catchError(error => this.formatErrors(error)),
+    );
+  }
+
+  delete(path: string): Observable<any> {
+    return this.http.delete<any>(path).pipe(
+      catchError(error => this.formatErrors(error)),
+    );
+  }
 }
