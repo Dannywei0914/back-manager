@@ -1,0 +1,81 @@
+<div class="view">
+  <perfect-scrollbar>
+    <div class="top">
+      <div class="top-title">商品管理</div>
+      <div class="top-nav">
+          <div class="top-nav__box">
+              <!-- <select class="top-nav__box-select"></select> -->
+              <mat-form-field appearance="fill">
+                <mat-label>Choose</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let food of typeList" [value]="food.name">
+                    {{food.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <button type="button" class="top-nav__box-button">+ Add</button>
+          </div>
+          <div class="top-nav__box">
+            <mat-paginator #paginator  [length]="productData.length"
+                           [pageSize]="10"
+                           [pageSizeOptions]="[5, 10, 25, 100]">
+            </mat-paginator>
+          </div>
+      </div>
+  </div>
+  <div class="middle">
+      <ul class="middle-list">
+          <li class="middle-list__title">
+              <div>
+                  <p>編號</p>
+              </div>
+              <div>
+                  <p>商品圖片</p>
+              </div>
+              <div>
+                  <p>商品名稱</p>
+              </div>
+              <div>
+                  <p>商品類別</p>
+              </div>
+              <div>
+                  <p>成本</p>
+              </div>
+              <div>
+                  <p>售價</p>
+              </div>
+              <div>
+                  <p>庫存</p>
+              </div>
+              <div>
+                  <p>刪除</p>
+              </div>
+              <div>
+                  <p>編輯</p>
+              </div>
+          </li>
+          <ol class="middle-list__content">
+              <div class="middle-list__content-box">
+                <li class="middle-list__content-item" *ngFor="let item of productData; index as i">
+                  <div><p [title]="i + 1">{{i + 1}}</p></div>
+                  <div><img src="../../../../assets/icons/administrator.png"></div>
+                  <div><p [title]="item.name">{{item.name}}</p></div>
+                  <div><p [title]="item.type">{{item.type}}</p></div>
+                  <div><p [title]="item.cost">{{item.cost}}</p></div>
+                  <div><p [title]="item.unit">{{item.unit}}</p></div>
+                  <div><p [title]="item.amount">{{item.amount}}</p></div>
+                  <div><img title="delete" src=".../../../../assets/icons/mail_trash_can.png"></div>
+                  <div><img title="edit" src="../../../../assets/icons/edit.png"></div>
+                </li>
+              </div>
+              <div class="spinner-box" *ngIf="this.componentsService.isTypeLoading === true">
+                  <div class="spinner-box__circle">
+                      <span>Loading...</span>
+                  </div>
+              </div>
+              <div class="middle-list__content-none-data" *ngIf="productData.length === 0 && this.componentsService.isTypeLoading === false">尚無資料</div>
+          </ol>
+      </ul>
+  </div>
+  </perfect-scrollbar>
+</div>

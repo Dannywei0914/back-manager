@@ -9,6 +9,8 @@
 
 12/13 完成類別的CRUD & loading頁面 ＆ 無資料顯示頁面
 
+12/14 新增商品list 資料及view 功能明天做
+
 # BackManager
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.

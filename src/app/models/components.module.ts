@@ -10,6 +10,8 @@ import { ProductTypeComponent } from './components/product-type/product-type.com
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { ProductListPageComponent } from './pages/product-list-page/product-list-page.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -20,7 +22,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HomeComponent,
     HomePageComponent,
     ProductTypePageComponent,
-    ProductTypeComponent
+    ProductTypeComponent,
+    ProductListPageComponent,
+    ProductListComponent
   ],
   imports: [
     CommonModule,

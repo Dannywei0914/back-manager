@@ -23,24 +23,61 @@
   ],
   "productList": [
     {
-      "name": "服飾類",
-      "id": 1
+      "id": 1,
+      "name": "茉莉綠茶",
+      "type": "飲品類",
+      "cost": 10,
+      "unit": 20,
+      "amount": 30
     },
     {
-      "name": "食品類",
-      "id": 2
+      "id": 2,
+      "name": "生活紅茶",
+      "type": "飲品類",
+      "cost": 10,
+      "unit": 20,
+      "amount": 30
     },
     {
-      "name": "娛樂類",
-      "id": 3
+      "id": 3,
+      "name": "無糖綠茶",
+      "type": "飲品類",
+      "cost": 10,
+      "unit": 20,
+      "amount": 30
     },
     {
-      "name": "蔬果類",
-      "id": 4
+      "id": 4,
+      "name": "檸檬紅茶",
+      "type": "飲品類",
+      "cost": 10,
+      "unit": 20,
+      "amount": 30
     },
     {
-      "name": "汽車類",
-      "id": 5
+      "id": 5,
+      "name": "水果茶",
+      "type": "飲品類",
+      "cost": 10,
+      "unit": 20,
+      "amount": 30
+    },
+    {
+      "id": 6,
+      "name": "烏龍茶",
+      "type": "飲品類",
+      "cost": 10,
+      "unit": 20,
+      "amount": 30
+    },
+    {
+      "id": 7,
+      "name": "文山清茶",
+      "type": "飲品類",
+      "cost": 10,
+      "unit": 20,
+      "amount": 30
     }
+
   ]
 }
